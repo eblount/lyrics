@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
+	'debug' => (env('APP_ENV') == 'local'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://lyrics.app',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/Chicago',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -137,6 +137,12 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
 		/*
+		 * Third-party Service Providers
+		 */
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
+
+		/*
 		 * Application Service Providers...
 		 */
 		'Lyrics\Providers\AppServiceProvider',
@@ -192,6 +198,11 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		/*
+		 * Third-Party
+		 */
+		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
 	],
 
